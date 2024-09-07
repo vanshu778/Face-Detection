@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+Symbols+2&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px o;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    position: relative;
+    cursor: pointer;
+    width: 100px;
+    margin: 2%;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: goldenrod;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+.project1 {
+    position: fixed;
+    margin-left: 15%;
+    margin-top: 4%;
+    filter: drop-shadow(0 0 0.75rem black);
+    border-radius: 25px;
+    box-shadow: 3px 3px 50px gold;
+}
+
+.project2 {
+    position: fixed;
+    margin-left: 60%;
+    margin-top: 4%;
+    filter: drop-shadow(0 0 0.75rem black);
+    border-radius: 25px;
+    box-shadow: 3px 3px 50px gold;
+}
+
+.btn {
+    border: none;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    overflow: hidden;
+    position: fixed;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: transparent;
+    padding: 17px 60px;
+    margin: 40%;
+    margin-top: 35%;
+    margin-left: 20%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.20);
+    border: 1px solid goldenrod;
+    border-radius: 20px;
+}
+
+.btn span {
+    position: relative;
+    z-index: 1;
+}
+
+.btn:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 140%;
+    background: goldenrod;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+    transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.btn:hover:after {
+    -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+.btn2 {
+    border: none;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    overflow: hidden;
+    position: fixed;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: transparent;
+    padding: 17px 60px;
+    margin: 40%;
+    margin-top: 35%;
+    margin-left: 68%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.20);
+    border: 1px solid goldenrod;
+    border-radius: 20px;
+}
+
+.btn2 span {
+    position: relative;
+    z-index: 1;
+}
+
+.btn2:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 175%;
+    background: goldenrod;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+    transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.btn2:hover:after {
+    -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}

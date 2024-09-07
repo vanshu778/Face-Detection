@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>login-signup</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/styles/reset_password.css">
+</head>
+
+<body>
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+    <div class="section d-flex align-item-center justify-content-center">
+
+        <div class="img text-center align-self-center py-5 log-block">
+            <img src="../static/images/login-img.png" alt="" class="log-img">
+        </div>
+
+        <div class="col-12 text-center align-self-center py-5">
+
+            <h6 class="mb-0 pb-3">
+                <span>Verification</span>
+                <span>Reset</span>
+            </h6>
+
+            <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" disabled>
+
+            <label for="reg-log"></label>
+
+            <div class="card-3d-wrap mx-auto">
+
+                <div class="card-3d-wrapper">
+
+                    <div class="card-front">
+                        <div class="center-wrap">
+                            <div class="section text-center">
+
+                                <h4 class="mb-4 pb-3">Account Recovery</h4>
+
+                                <div class="form-group mt-2 show">
+                                    <input type="email" class="form-style" placeholder={{emai_l}} name="email"
+                                        id="emai_l" disabled>
+                                    <i class="input-icon uil uil-at"></i>
+                                </div>
+
+                                <div class="form-group mt-2 sho">
+                                    <input type="password" class="form-style" placeholder="Verification Code" id="code">
+                                    <i class="input-icon uil uil-lock-alt"></i>
+
+                                    <button type="Submit" class="btn mt-4 check" id="s-submit">Submit</button>
+
+                                    <p class="mb-0 mt-4 text-center">
+                                        <a href="#" class="link text-danger" id="f-message"><a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card-back">
+                        <div class="center-wrap">
+                            <div class="section text-center">
+
+                                <h4 class="mb-3 pb-3">Welcome Back</h4>
+
+                                <form action="/reset" method="post">
+                                    <div class="form-group mt-2">
+                                        <input type="password" class="form-style" placeholder="New Password"
+                                            name="password1">
+                                        <i class="input-icon uil uil-at"></i>
+                                    </div>
+
+                                    <div class="form-group mt-2">
+                                        <input type="password" class="form-style" placeholder="Re-enter Password"
+                                            name="password2">
+                                        <i class="input-icon uil uil-lock-alt"></i>
+                                    </div>
+
+                                    <button class="btn mt-4" type="Submit">Update</button>
+                                </form>
+
+                                <div class="form-group mt-3">
+                                    <a href="#" class="link text-success" id="v-message">Your Password is Updated
+                                        Successfully
+                                        <a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector("#v-message").style.display = "none";
+        document.querySelector("#s-submit").addEventListener("click", async () => {
+            try {
+                const response = await fetch('/verify')
+                const data = await response.json();
+
+                var z = document.getElementById("code").value;
+
+                if (z == data[0]) {
+
+                    document.querySelector(".card-3d-wrapper").style.transform = "rotateY(180deg)";
+                }
+                else {
+                    document.querySelector("#f-message").innerHTML = "You Have Enter Wrong Verification Code";
+                    timeout();
+                    document.querySelector("#code").value = "";
+                }
+            }
+            catch (error) {
+                console.error('Error', error);
+            }
+        });
+
+        function timeout() {
+            setTimeout(function () {
+                document.querySelector("#f-message").innerHTML = "";
+            }, 5000);
+        }
+    </script>
+
+</body>
+
+</html>

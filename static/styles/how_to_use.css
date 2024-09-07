@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+Symbols+2&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px o;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    position: relative;
+    cursor: pointer;
+    width: 100px;
+    margin: 2%;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: goldenrod;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+
+.border {
+    box-shadow: 2px 2px 6px goldenrod, -2px -2px 6px goldenrod;
+}
+
+.how_to_use_section {
+    padding: 30px 10px;
+    text-align: center;
+}
+
+h1 a:hover {
+    color: white;
+}
+
+h1 a {
+    text-decoration: none;
+    color: white;
+    font-size: 50px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+
+    margin: 15px 0px;
+}
+
+label,
+button {
+    position: relative;
+    font-size: 1rem;
+    overflow: hidden;
+    border: 1px solid goldenrod;
+    color: white;
+    background-color: transparent;
+    border-radius: 20px;
+}
+
+button {
+
+    padding: 10px 25px;
+    position: relative;
+    z-index: 1;
+}
+
+label:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 254%;
+    width: 140%;
+    background: goldenrod;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: translateX(-99%) translateY(-25%) rotate(45deg);
+    transform: translateX(-122%) translateY(-10%) rotate(45deg);
+}
+
+label:hover:after {
+    -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="shortcut icon" href="../static/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../static/styles/style.css">
+
+    <title>Face Feel Flow</title>
+
+</head>
+
+<body>
+    <img src="../static/images/background.png" alt="" class="bg">
+    <img src="../static/images/logo.png" alt="" class="logo">
+
+    <p class="letter">
+
+    <section>
+        <video src="../static/images/smoke.mp4" autoplay muted></video>
+        <h1>
+            <span>𝔉</span>
+            <span class="normal">&#128512;</span>
+            <span>𝔠</span>
+            <span>𝔢</span>
+            <span class="sp_effect">&nbsp;</span>
+
+            <span>𝔉</span>
+            <span>𝔢</span>
+            <span>𝔢</span>
+            <span>𝔩</span>
+            <span class="sp_effect">&nbsp;</span>
+
+            <span>𝔉</span>
+            <span>𝔩</span>
+            <span class="normal">&#128526;</span>
+            <span>𝔴</span>
+            <span class="sp_effect">&nbsp;</span>
+
+        </h1>
+    </section>
+    </p>
+
+    <p class="slogan">
+        ~ "𝘍𝘦𝘦𝘭 𝘵𝘩𝘦 𝘉𝘦𝘢𝘵
+        <span class="edit special">&#127926;</span>,
+    </p>
+    <p class="slogan zagya">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        𝘔𝘢𝘵𝘤𝘩 𝘵𝘩𝘦 𝘔𝘰𝘰𝘥:
+        <span class="edit">&#128522;</span>
+        𝘞𝘩𝘦𝘳𝘦 𝘔𝘶𝘴𝘪𝘤 𝘠𝘰𝘶𝘳 𝘌𝘮𝘰𝘵𝘪𝘰𝘯𝘴! <span class="edit">&#129402;</span>"
+    </p>
+
+    <a href="/login_signup_page" class="btn-start">Get Started</a>
+
+
+    <script>
+        var myDiv = document.querySelector(".slogan");
+
+        var text = myDiv.innerText;
+
+        myDiv.innerText = '';
+
+        function printText(index) {
+            if (index < text.length) {
+                myDiv.innerHTML += text.charAt(index);
+                setTimeout(function () {
+                    printText(index + 1);
+                }, 40);
+            }
+        }
+
+        var myDiv1 = document.querySelector(".zagya");
+
+        var text1 = myDiv1.innerText;
+
+        myDiv1.innerText = '';
+
+        function printText1(index) {
+            if (index < text1.length) {
+                myDiv1.innerHTML += text1.charAt(index);
+                setTimeout(function () {
+                    printText1(index + 1);
+                }, 40);
+            }
+        }
+
+        setTimeout(function () {
+            printText(0);
+        }, 1000);
+
+        setTimeout(function () {
+            printText1(0);
+        }, 2000); 
+    </script>
+</body>
+
+
+</html>
